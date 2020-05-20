@@ -21,32 +21,7 @@ class ViewController: UIViewController {
     // Checks for each button tag number and passes its label string
     @IBAction func keyPressed(_ sender: UIButton) {
         
-        switch sender.tag {
-        case 1:
-            playSound(input: (sender.titleLabel?.text)!)
-            break;
-        case 2:
-            playSound(input: (sender.titleLabel?.text)!)
-            break;
-        case 3:
-            playSound(input: (sender.titleLabel?.text)!)
-            break;
-        case 4:
-            playSound(input: (sender.titleLabel?.text)!)
-            break;
-        case 5:
-            playSound(input: (sender.titleLabel?.text)!)
-            break;
-        case 6:
-            playSound(input: (sender.titleLabel?.text)!)
-            break;
-        case 7:
-            playSound(input: (sender.titleLabel?.text)!)
-            break;
-            
-        default:
-            print("Nothing was selected")
-        }
+        playSound(input: (sender.titleLabel?.text)!)
         
     }
     
