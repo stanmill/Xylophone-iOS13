@@ -26,8 +26,8 @@ class ViewController: UIViewController {
         // Changes opacety when the user clicks the button
         sender.alpha = 0.5
         
-        // Code should execute after 0.1 second delay.
-        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+        // Code should execute after 0.2 second delay.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
             //Bring's sender's opacity back up to fully opaque.
             sender.alpha = 1.0
         }
