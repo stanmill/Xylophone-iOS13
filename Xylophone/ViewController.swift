@@ -14,21 +14,49 @@ class ViewController: UIViewController {
     // Create an instance of the audio object
     var player = AVAudioPlayer()
     
-      override func viewDidLoad() {
+    override func viewDidLoad() {
         super.viewDidLoad()
     }
-
+    
+    // Checks for each button tag number and passes its label string
     @IBAction func keyPressed(_ sender: UIButton) {
-        playSound()
+        
+        switch sender.tag {
+        case 1:
+            playSound(input: (sender.titleLabel?.text)!)
+            break;
+        case 2:
+            playSound(input: (sender.titleLabel?.text)!)
+            break;
+        case 3:
+            playSound(input: (sender.titleLabel?.text)!)
+            break;
+        case 4:
+            playSound(input: (sender.titleLabel?.text)!)
+            break;
+        case 5:
+            playSound(input: (sender.titleLabel?.text)!)
+            break;
+        case 6:
+            playSound(input: (sender.titleLabel?.text)!)
+            break;
+        case 7:
+            playSound(input: (sender.titleLabel?.text)!)
+            break;
+            
+        default:
+            print("Nothing was selected")
+        }
         
     }
     
-    func playSound() {
+    func playSound(input : String) {
         // Gets a refrence to the audio file
-        let url = Bundle.main.url(forResource: "C", withExtension: "wav")
+        // Passes user input
+        let url = Bundle.main.url(forResource: input, withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
-       
+
     }
     
     
