@@ -20,9 +20,17 @@ class ViewController: UIViewController {
     
     // Checks for each button tag number and passes its label string
     @IBAction func keyPressed(_ sender: UIButton) {
-        
+
         playSound(input: (sender.titleLabel?.text)!)
         
+        // Changes opacety when the user clicks the button
+        sender.alpha = 0.5
+        
+        // Code should execute after 0.1 second delay.
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+            //Bring's sender's opacity back up to fully opaque.
+            sender.alpha = 1.0
+        }
     }
     
     func playSound(input : String) {
@@ -31,6 +39,7 @@ class ViewController: UIViewController {
         let url = Bundle.main.url(forResource: input, withExtension: "wav")
         player = try! AVAudioPlayer(contentsOf: url!)
         player.play()
+        
 
     }
     
